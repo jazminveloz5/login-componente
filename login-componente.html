@@ -1,13 +1,71 @@
 <link rel="import" href="../polymer/polymer-element.html">
-
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../paper-input/all-imports.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../d2l-checkbox/d2l-checkbox.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+  
 <dom-module id="login-componente">
   <template>
     <style>
       :host {
         display: block;
       }
+      h2 {
+        text-align: center;
+        font: bold;
+        font: Times;
+        }
+        paper-card{
+          width: 60%;
+        border:5px solid hotpink;
+        display: inline-block;
+        text-align: center;
+        }
+      paper-button {
+        color:white;
+        background: rgb(252, 6, 170);
+        width:260px;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+      }
+      paper-input{
+        color: rgb(82, 80, 80);
+        background:rgb(179, 179, 179);
+        width:260px;
+        height: 50px;
+        display: inline-block;
+        text-align: left;
+      }
+      d21-checkbox{
+        color: rgb(82, 80, 80);
+text-align: left;
+              }
+      .t2{
+        color: rgb(82, 80, 80);
+        background:rgb(179, 179, 179);
+        width:260px;
+        height: 50px;
+        display: inline-block;
+        text-align: left;
+      }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+<
+
+    <paper-card>
+      <h2>LOGIN</h2>
+      <input type="email" class="t2" name="email"required minlength="8"value=""
+      placeholder="Email">
+      <br>
+      <br>
+      <paper-input label="password" ></paper-input>
+      <br>
+      <br>
+      <d2l-checkbox checked>Remember me</d2l-checkbox>
+      <paper-button on-click="Login">{{buttonValue}}</paper-button>
+    </paper-card>
+    <iron-icon>h</iron-icon>
   </template>
 
   <script>
@@ -26,11 +84,43 @@
           prop1: {
             type: String,
             value: 'login-componente'
+          },
+          buttonValue: {
+            type: String,
+            value: 'LOGIN'
+          },
+          email: {
+            type:String,
+            value: '',
+            notify: true,
+          },
+         password:{
+           type:String,
+           value: '',
+           notify: true,
+         },
+          userCorre:{
+            type:Boolean,
+            notify: true,
+            value:false,
           }
         };
       }
+    
+ validarEmail(email) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){
+   alert("La dirección de email " + email + " es correcta.");
+  } else {
+   alert("La dirección de email es incorrecta.");
+  }
+}
+ Login(){
+  let email= this.email;
+  let password= this.password;
+  this.userCorre=true;
+  console.log(this.userCorre);
+}
     }
-
     window.customElements.define(LoginComponente.is, LoginComponente);
   </script>
 </dom-module>

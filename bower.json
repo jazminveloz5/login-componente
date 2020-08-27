@@ -2,7 +2,12 @@
   "name": "login-componente",
   "main": "login-componente.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-button": "https://github.com/PolymerElements/paper-button.git#v2.0.0",
+    "paper-card": "https://github.com/PolymerElements/paper-card.git#v2.0.0",
+    "paper-input": "https://github.com/PolymerElements/paper-input.git#v2.0.0",
+    "d2l-checkbox": "https://github.com/BrightspaceUI/checkbox.git#v0.2.1",
+    "iron-icon": "https://github.com/PolymerElements/iron-icon.git#v2.0.0"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
