@@ -51,15 +51,13 @@ text-align: left;
         text-align: left;
       }
     </style>
-<
-
     <paper-card>
       <h2>LOGIN</h2>
-      <input type="email" class="t2" name="email"required minlength="8"value=""
-      placeholder="Email">
+      <input type="email" class="t2" value="[[email]]" name="email"required minlength="8"value=""
+      placeholder="Email" >
       <br>
       <br>
-      <paper-input label="password" ></paper-input>
+      <paper-input label="password" value="[[password]]" ></paper-input>
       <br>
       <br>
       <d2l-checkbox checked>Remember me</d2l-checkbox>
@@ -106,19 +104,13 @@ text-align: left;
           }
         };
       }
-    
- validarEmail(email) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)){
-   alert("La dirección de email " + email + " es correcta.");
-  } else {
-   alert("La dirección de email es incorrecta.");
-  }
-}
+
  Login(){
-  let email= this.email;
-  let password= this.password;
+  //let email= this.email;
+  //let password= this.password;
   this.userCorre=true;
-  console.log(this.userCorre);
+  //console.log(this.userCorre);
+  alert("Ya queda");
 }
     }
     window.customElements.define(LoginComponente.is, LoginComponente);
